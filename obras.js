@@ -2,7 +2,7 @@ const minhasObras = [
     {
         id: 1,
         titulo: "NOME DA OBRA AQUI",
-        imagem: "LINK_DA_FOTO_AQUI",
+        imagem: "https://i.ibb.co/PS61nSH/1c220510e21b2d0f67be585ce5e4bc32e7a72f3a-600-800-100412.jpg",
         autor: "NOME DO AUTOR",
         artista: "NOME DO ARTISTA",
         status: "Ativo",
