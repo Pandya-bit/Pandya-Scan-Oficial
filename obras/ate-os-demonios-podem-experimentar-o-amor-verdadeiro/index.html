@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Até os demônios podem experimentar o amor verdadeiro - Polar Scan</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .obra-container { padding: 20px 5%; max-width: 1000px; margin: 0 auto; }
+        .obra-header { display: flex; flex-wrap: wrap; gap: 30px; background: #1a1a1a; padding: 25px; border-radius: 20px; border: 1px solid #333; margin-top: 20px; }
+        .obra-capa { width: 250px; border-radius: 10px; border: 2px solid var(--amarelo-pastel); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .obra-info { flex: 1; min-width: 300px; text-align: left; }
+        .obra-info h1 { color: var(--amarelo-pastel); font-size: 1.8rem; margin-bottom: 15px; line-height: 1.2; }
+        .status-badge { color: #ff7675; font-weight: bold; }
+        .sinopse { background: #252525; padding: 15px; border-radius: 10px; margin: 20px 0; line-height: 1.6; border-left: 4px solid var(--amarelo-pastel); color: #eee; }
+        .btn-favoritar { background: transparent; border: 2px solid var(--amarelo-pastel); color: var(--amarelo-pastel); padding: 12px 25px; border-radius: 30px; cursor: pointer; font-weight: bold; margin-bottom: 10px; }
+        .btn-favoritar.ativo { background: var(--amarelo-pastel); color: #000; }
+        .secao-capitulos { margin-top: 40px; text-align: left; }
+        .cap-aviso { background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px dashed #555; text-align: center; color: #888; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><span>🐻‍❄️ Polar Scan</span></div>
+        <ul class="menu" style="gap: 25px;">
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="../../catalogo.html">Catálogo</a></li>
+            <li><a href="../../recrutamento.html">Recrutamento</a></li>
+        </ul>
+    </nav>
+
+    <div class="obra-container">
+        <section class="obra-header">
+            <img src="https://i.postimg.cc/JnFMh0N5/Screenshot-20260104-144402-2.jpg" alt="Capa da Obra" class="obra-capa">
+            
+            <div class="obra-info">
+                <h1>Até os demônios podem experimentar o amor verdadeiro</h1>
+                <p><strong>Autor:</strong> A definir</p>
+                <p><strong>Gêneros:</strong> Yaoi(BL), Demônios, +18, Romance</p>
+                <p><strong>Status:</strong> <span class="status-badge">Publicação não iniciada</span></p>
+                
+                <button id="btnFav" class="btn-favoritar" onclick="toggleFavorito('DemoniosAmor')">❤ SALVAR NA BIBLIOTECA</button>
+
+                <div class="sinopse">
+                    <strong>Sinopse:</strong><br>
+                    A palavra que significa diabo, satanás e todo o mal do mundo aqui não passa de uma profissão popular, conhecida por seus altos salários e estabilidade invejável. <br><br>
+                    Determinando a mudar de vida, Woohyuk, um funcionário de meio período em uma loja de conveniência, enfrenta dias difíceis enquanto se prepara para o concorrido teste de recrutamento de incubus. Quando tudo parece perdido, ele recebe uma proposta inesperada de Siwoon: “Você realmente quer passar no teste de incubus? Então… treine comigo.” <br><br>
+                    A aula de sexo que começou para a preparação do teste... entre amigos... isso é realmente permitido...?!
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-capitulos">
+            <h2 style="color: var(--amarelo-pastel);">Capítulos</h2>
+            <div class="cap-aviso">
+                Nenhum capítulo disponível ainda. Fique atento às atualizações!
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleFavorito(nome) {
+            let favs = JSON.parse(localStorage.getItem('minha_biblioteca')) || [];
+            let btn = document.getElementById('btnFav');
+            if (favs.includes(nome)) {
+                favs = favs.filter(i => i !== nome);
+                btn.innerText = "❤ SALVAR NA BIBLIOTECA";
+                btn.classList.remove('ativo');
+            } else {
+                favs.push(nome);
+                btn.innerText = "⭐ SALVO NA BIBLIOTECA";
+                btn.classList.add('ativo');
+            }
+            localStorage.setItem('minha_biblioteca', JSON.stringify(favs));
+        }
+    </script>
+</body>
+</html>
