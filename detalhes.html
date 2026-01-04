@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Obra - Pandya Scan</title>
+    <style>
+        :root {
+            --fundo: #0a0a0a;
+            --roxo-claro: #9d4edd;
+            --roxo-escuro: #1a0b2e;
+            --texto: #ffffff;
+        }
+
+        body {
+            background-color: var(--fundo);
+            color: var(--texto);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        header {
+            background: var(--roxo-escuro);
+            padding: 15px;
+            border-bottom: 2px solid var(--roxo-claro);
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-voltar {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        /* Área da Capa e Info */
+        .info-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, var(--roxo-escuro), var(--fundo));
+        }
+
+        .capa-obra {
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+            border: 2px solid var(--roxo-claro);
+        }
+
+        .sinopse-container {
+            padding: 20px;
+            margin: 15px;
+            background: #161616;
+            border-radius: 10px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Lista de Capítulos */
+        .lista-capitulos {
+            padding: 0 20px;
+        }
+
+        .capitulo-item {
+            background: #222;
+            padding: 15px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            border-left: 4px solid var(--roxo-claro);
+        }
+
+        /* Área de Comentários */
+        .comentarios {
+            margin: 30px 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="btn-voltar">⬅ Voltar</a>
+        <span>Informações da Obra</span>
+    </header>
+
+    <div class="info-header">
+        <img src="https://i.ibb.co/VWVm0fS/CsNXrj-SM.jpg" class="capa-obra" alt="Capa">
+        <h1 style="margin: 15px 0 5px 0;">Imugi e o lenhador</h1>
+        <p style="color: var(--roxo-claro); margin: 0;">Yaoi • Sobrenatural • Adulto</p>
+    </div>
+
+    <div class="sinopse-container">
+        <h3 style="margin-top: 0; color: var(--roxo-claro);">Sinopse</h3>
+        <p>Um encontro místico entre um Imugi e um simples lenhador muda o destino de ambos. Entre segredos e desejos, essa história explora a conexão profunda entre o humano e o sobrenatural.</p>
+    </div>
+
+    <div class="lista-capitulos">
+        <h3 style="color: var(--roxo-claro);">Capítulos Disponíveis</h3>
+        
+        <a href="leitor.html" class="capitulo-item">
+            <span>Capítulo 01</span>
+            <span style="font-size: 0.8rem; color: #888;">04 Jan 2026</span>
+        </a>
+
+        <div class="capitulo-item" style="opacity: 0.5;">
+            <span>Capítulo 02</span>
+            <span>Em breve</span>
+        </div>
+    </div>
+
+    <div class="comentarios">
+        <h3 style="color: var(--roxo-claro);">Comentários</h3>
+        <p style="color: #666; font-size: 0.9rem;">O sistema de comentários será liberado em breve. Deixe sua reação!</p>
+    </div>
+
+</body>
+</html>
