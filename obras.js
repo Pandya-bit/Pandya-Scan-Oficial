@@ -2,7 +2,7 @@ const minhasObras = [
     {
         id: 1,
         titulo: "Imugi e o lenhador",
-        imagem: "https://telegra.ph/file/a8df15bd81d4a6455c7266866a3f4db92f84c7c0.jpg",
+        imagem: "https://ibb.co/CsNXrjSM.jpg",
         status: "Em andamento",
         generos: ["Yaoi", "Adulto", "Sobrenatural"],
         popular: true,
