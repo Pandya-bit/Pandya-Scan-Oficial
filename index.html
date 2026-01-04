@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandya Scan | Yaoi</title>
+    <style>
+        :root {
+            --preto: #121212;
+            --amarelo-pastel: #FDFD96;
+            --cinza-escuro: #1f1f1f;
+        }
+
+        body {
+            background-color: var(--preto);
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--cinza-escuro);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 2px solid var(--amarelo-pastel);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-name { color: var(--amarelo-pastel); font-weight: bold; font-size: 22px; text-transform: uppercase; }
+
+        /* MENU LATERAL */
+        .side-menu {
+            height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0;
+            background-color: var(--cinza-escuro); overflow-x: hidden; transition: 0.4s;
+            padding-top: 60px; border-right: 1px solid var(--amarelo-pastel);
+        }
+
+        .side-menu a { padding: 15px 25px; text-decoration: none; font-size: 18px; color: white; display: block; }
+        .side-menu a:hover { color: var(--amarelo-pastel); }
+
+        /* BANNER PIX */
+        .pix-banner {
+            background: #2a2a2a; margin: 20px; padding: 15px; border-radius: 10px;
+            border: 1px solid var(--amarelo-pastel); font-size: 14px;
+        }
+
+        /* FILTROS */
+        .filtros { display: flex; gap: 15px; padding: 10px 20px; overflow-x: auto; }
+        .filtro-item { color: var(--amarelo-pastel); font-weight: bold; cursor: pointer; text-decoration: none; }
+
+        /* GRID DE MANGÁS */
+        .manga-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px; padding: 20px;
+        }
+
+        .manga-card {
+            background: var(--cinza-escuro); border-radius: 8px; overflow: hidden;
+            text-decoration: none; color: white; transition: 0.3s; border: 1px solid transparent;
+        }
+
+        .manga-card:hover { border-color: var(--amarelo-pastel); transform: scale(1.02); }
+        .manga-card img { width: 100%; height: 230px; object-fit: cover; }
+        
+        .manga-info { padding: 10px; text-align: center; }
+        .manga-info h3 { font-size: 14px; margin: 5px 0; }
+        .cap-btn {
+            background: #333; color: var(--amarelo-pastel); border: 1px solid var(--amarelo-pastel);
+            padding: 5px; font-size: 11px; border-radius: 4px; display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="mySidebar" class="side-menu">
+    <a href="javascript:void(0)" onclick="closeNav()" style="font-size: 35px;">&times;</a>
+    <a href="#" onclick="showSection('Projetos')"># Projetos</a>
+    <a href="#" onclick="showSection('Em Andamento')">Em Andamento</a>
+    <a href="#" onclick="showSection('Concluído')">Concluído</a>
+    <a href="#" onclick="showSection('Não Iniciado')">Não Iniciado</a>
+    <a href="#" onclick="showSection('Em breve')">Em breve</a>
+    <hr>
+    <a href="#">Recrutamento</a>
+    <a href="#">Sugestões</a>
+</div>
+
+<header>
+    <div style="display:flex; align-items:center; gap:15px;">
+        <span style="font-size:25px;cursor:pointer;color:var(--amarelo-pastel)" onclick="openNav()">&#9776;</span>
+        <span class="logo-name">Pandya Scan</span>
+    </div>
+    <div style="font-size: 24px; color: var(--amarelo-pastel);">⭐</div>
+</header>
+
+<div class="pix-banner">
+    <strong style="color: var(--amarelo-pastel)">PRECISAMOS DE AJUDA!</strong><br>
+    Meu PIX/E-mail: <strong>stephanysantos787@gmail.com</strong>
+</div>
+
+<div class="filtros">
+    <a class="filtro-item" onclick="showSection('Projetos')"># TODOS</a>
+    <a class="filtro-item" onclick="showSection('Em Andamento')">ANDAMENTO</a>
+    <a class="filtro-item" onclick="showSection('Concluído')">CONCLUÍDO</a>
+    <a class="filtro-item" onclick="showSection('Em breve')">EM BREVE</a>
+</div>
+
+<h2 id="section-title" style="margin-left: 20px; color: var(--amarelo-pastel);"># Últimas Atualizações</h2>
+
+<main class="manga-grid">
+    
+    <a href="https://SEU-USUARIO.github.io/NOME-DO-OUTRO-REPOSITORIO/pasta-do-manga/" class="manga-card">
+        <img src="LINK-DA-CAPA.jpg" alt="Capa">
+        <div class="manga-info">
+            <h3>Nome do Mangá</h3>
+            <span class="cap-btn">Capítulo 01</span>
+        </div>
+    </a>
+
+</main>
+
+<script>
+    function openNav() { document.getElementById("mySidebar").style.width = "260px"; }
+    function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
+    function showSection(nome) { document.getElementById("section-title").innerText = "# " + nome; closeNav(); }
+</script>
+
+</body>
+</html>
