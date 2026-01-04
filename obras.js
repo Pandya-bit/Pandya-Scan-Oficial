@@ -1,96 +1,26 @@
-const minhasObras = [
+// BANCO DE DADOS DA PANDYA SCAN
+const obras = [
     {
-        id: 1,
+        id: "imugi-lenhador",
         titulo: "Imugi e o Lenhador",
-        imagem: "https://i.ibb.co/PS61nSH/1c220510e21b2d0f67be585ce5e4bc32e7a72f3a-600-800-100412.jpg",
-        autor: "NOME DO AUTOR",
-        artista: "NOME DO ARTISTA",
-        status: "Ativo",
+        imagem: "https://i.ibb.co/689z0Hh/1c220510e21b2d0f67be585ce5e4bc32e7a72f3a-600-800-100412.jpg",
+        genero: "Drama, Fantasia, Shounen Ai",
         tipo: "Manhwa",
-        lancamento: "2026",
-        generos: ["Yaoi (BL), adulto, Maduro, +18"],
-        sinopse: "ESCREVA AQUI O RESUMO DA HISTÓRIA",
-        linkDetalhes: "detalhes.html",
-        capitulos: [
-            { num: "01", data: "04/01/2026", link: "leitor.html" }
-        ]
-    },
-    {
-        id: 2,
-        titulo: "ESPAÇO RESERVADO 2",
-        imagem: "",
-        autor: "",
-        artista: "",
-        status: "Em breve",
-        tipo: "",
-        lancamento: "",
-        generos: [],
-        sinopse: "",
-        linkDetalhes: "detalhes.html",
-        capitulos: []
-    },
-    {
-        id: 3,
-        titulo: "ESPAÇO RESERVADO 3",
-        imagem: "",
-        autor: "",
-        artista: "",
-        status: "Em breve",
-        tipo: "",
-        lancamento: "",
-        generos: [],
-        sinopse: "",
-        linkDetalhes: "detalhes.html",
-        capitulos: []
-    },
-    {
-        id: 4,
-        titulo: "ESPAÇO RESERVADO 4",
-        imagem: "",
-        autor: "",
-        artista: "",
-        status: "Em breve",
-        tipo: "",
-        lancamento: "",
-        generos: [],
-        sinopse: "",
-        linkDetalhes: "detalhes.html",
-        capitulos: []
-    },
-    {
-        id: 5,
-        titulo: "ESPAÇO RESERVADO 5",
-        imagem: "",
-        autor: "",
-        artista: "",
-        status: "Em breve",
-        tipo: "",
-        lancamento: "",
-        generos: [],
-        sinopse: "",
-        linkDetalhes: "detalhes.html",
-        capitulos: []
+        autor: "Nome do Autor",
+        status: "Lançamento",
+        sinopse: "Aqui você escreve a história do Imugi e do Lenhador...",
+        link: "detalhes.html"
     }
+    // Para adicionar a próxima obra, basta colocar uma vírgula após a "}" acima e colar um novo bloco igual.
 ];
 
-// Função que desenha as capas na tela principal (index.html)
-function exibirObras() {
-    const container = document.getElementById('lista-obras');
-    if (!container) return;
+// Torna a lista visível para os outros arquivos (scripts.js)
+window.listaObras = obras;
 
-    container.innerHTML = minhasObras.map(obra => `
-        <div class="card-manga">
-            <a href="${obra.linkDetalhes}">
-                <div class="status-badge">${obra.status}</div>
-                <img src="${obra.imagem}" alt="${obra.titulo}">
-            </a>
-            <div class="card-info">
-                <h3>${obra.titulo}</h3>
-                <a href="${obra.capitulos.length > 0 ? obra.capitulos[0].link : '#'}" class="btn-cap">
-                    ${obra.capitulos.length > 0 ? 'Capítulo ' + obra.capitulos[0].num : 'Em breve'}
-                </a>
-            </div>
-        </div>
-    `).join('');
+// Função para garantir que os detalhes sejam salvos ao clicar
+function guardarDetalhes(id) {
+    const obra = obras.find(o => o.id === id);
+    if (obra) {
+        localStorage.setItem('obraAtual', JSON.stringify(obra));
+    }
 }
-document.addEventListener('DOMContentLoaded', exibirObras);
