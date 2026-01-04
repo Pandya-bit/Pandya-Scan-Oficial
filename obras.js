@@ -1,23 +1,21 @@
-// BANCO DE DADOS DA PANDYA SCAN
 const obras = [
     {
         id: "imugi-lenhador",
         titulo: "Imugi e o Lenhador",
         imagem: "https://i.ibb.co/689z0Hh/1c220510e21b2d0f67be585ce5e4bc32e7a72f3a-600-800-100412.jpg",
-        genero: "Drama, Fantasia, Shounen Ai",
+        autor: "Chun-Sik",
+        generos: ["Yaoi (BL)", "Adulto", "Maduro", "+18", "Fantasia", "Drama"],
         tipo: "Manhwa",
-        autor: "Nome do Autor",
-        status: "Lançamento",
-        sinopse: "Aqui você escreve a história do Imugi e do Lenhador...",
+        lancamento: "2026",
+        estado: "Em Andamento",
+        ultimoCap: "01",
+        sinopse: "Um lenhador pobre chamado Yeongdo, que vive sozinho enquanto anseia por uma família. E um imugi — um espírito serpente que só pode se transformar em dragão matando sua companheira. Yeongdo ouve um boato de que se você jogar um machado em um lago na montanha, o espírito da montanha o devolverá como um machado de ouro. Querendo realizar um casamento, ele joga seu machado no lago. Mas o que emerge do lago não é um espírito da montanha — é um imugi, furioso depois que inúmeros humanos continuaram atirando seus machados em suas águas. O imugi, que estava prestes a matar o humano antes dele, é atraído pelo cheiro que vem de Yeongdo... e começa a ficar obcecado por ele.",
         link: "detalhes.html"
     }
-    // Para adicionar a próxima obra, basta colocar uma vírgula após a "}" acima e colar um novo bloco igual.
 ];
 
-// Torna a lista visível para os outros arquivos (scripts.js)
 window.listaObras = obras;
 
-// Função para garantir que os detalhes sejam salvos ao clicar
 function guardarDetalhes(id) {
     const obra = obras.find(o => o.id === id);
     if (obra) {
