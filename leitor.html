@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lendo - Pandya Scan</title>
+    <style>
+        body { background: #0a0a0a; color: white; margin: 0; font-family: sans-serif; text-align: center; }
+        
+        /* Controles de navegação */
+        .controles {
+            background: #1a0b2e; padding: 15px;
+            position: sticky; top: 0; z-index: 100;
+            display: flex; justify-content: center; gap: 10px;
+            border-bottom: 2px solid #9d4edd;
+        }
+
+        select, .btn-nav {
+            background: #7b2cbf; color: white; border: none;
+            padding: 8px 15px; border-radius: 5px; font-weight: bold;
+        }
+
+        /* Container das Imagens */
+        .capitulo-container {
+            max-width: 800px; /* Largura ideal para ler no PC e Celular */
+            margin: 0 auto;
+            display: flex; flex-direction: column;
+        }
+
+        .capitulo-container img {
+            width: 100%; /* Ocupa a largura total do container */
+            display: block; /* Remove espaços brancos entre as imagens */
+        }
+
+        footer { padding: 40px; background: #1a0b2e; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="controles">
+        <button class="btn-nav">⬅ Ant</button>
+        <select>
+            <option>Capítulo 01</option>
+            <option>Capítulo 02</option>
+        </select>
+        <button class="btn-nav">Próx ➡</button>
+    </div>
+
+    <div class="capitulo-container">
+        <img src="LINK_DA_PAGINA_01.jpg">
+        <img src="LINK_DA_PAGINA_02.jpg">
+        <img src="LINK_DA_PAGINA_03.jpg">
+    </div>
+
+    <footer>
+        <div class="controles" style="position: static; border: none;">
+            <button class="btn-nav">⬅ Anterior</button>
+            <button class="btn-nav" onclick="window.scrollTo(0,0)">Subir ⬆</button>
+            <button class="btn-nav">Próximo ➡</button>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #9d4edd;">Pandya Scan - Qualidade em cada página</p>
+    </footer>
+
+</body>
+</html>
