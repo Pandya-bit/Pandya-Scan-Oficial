@@ -2,7 +2,7 @@ const minhasObras = [
     {
         id: 1,
         titulo: "Imugi e o lenhador",
-        imagem: "https://i.ibb.co/VWVm0fS/CsNXrj-SM.jpg",
+        imagem: "https://i.postimg.cc/CMfJkDN1/1c220510e21b2d0f67be585ce5e4bc32e7a72f3a-600-800-100412.webp",
         status: "Ativo",
         autor: "Pendente",
         artista: "Pendente",
