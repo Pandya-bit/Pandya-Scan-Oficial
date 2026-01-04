@@ -30,3 +30,10 @@ function carregarObras() {
 }
 
 window.onload = carregarObras;
+
+    </main>
+
+    <script src="obras.js"></script>
+</body>
+</html>
+
