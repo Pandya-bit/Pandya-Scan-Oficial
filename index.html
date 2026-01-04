@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,224 +6,157 @@
     <title>Pandya Scan - Oficial</title>
     <style>
         :root {
-            --roxo-fundo: #0d0d0d;
+            --fundo: #0a0a0a;
             --roxo-menu: #1a0b2e;
-            --rosa-brilhante: #e91e63;
-            --branco: #ffffff;
-            --cinza-escuro: #161616;
+            --roxo-claro: #9d4edd;
+            --roxo-vibrante: #7b2cbf;
+            --texto: #ffffff;
         }
 
         body {
-            background-color: var(--roxo-fundo);
-            color: var(--branco);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--fundo);
+            color: var(--texto);
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            padding-bottom: 40px;
         }
 
-        /* Topo e Pesquisa */
+        /* Cabeçalho Estilo Foto 2 */
         header {
             background-color: var(--roxo-menu);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 18px;
-            border-bottom: 2px solid var(--rosa-brilhante);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 10px 20px;
+            border-bottom: 2px solid var(--roxo-claro);
+            position: sticky; top: 0; z-index: 1000;
         }
 
-        .search-bar {
-            background: rgba(255, 255, 255, 0.1);
+        .search-area {
+            background: rgba(255,255,255,0.1);
             border-radius: 20px;
-            padding: 6px 15px;
+            padding: 5px 15px;
+            display: flex; align-items: center;
+            width: 40%;
+        }
+
+        .btn-fav-header {
+            color: var(--roxo-claro);
+            text-decoration: none;
+            font-weight: bold;
             display: flex;
             align-items: center;
-            width: 55%;
-        }
-
-        .search-bar input {
-            background: none;
-            border: none;
-            color: white;
-            margin-left: 8px;
-            width: 100%;
-            outline: none;
+            gap: 5px;
         }
 
         /* Menu Lateral */
         .side-menu {
-            position: fixed;
-            top: 0;
-            left: -280px;
-            width: 280px;
-            height: 100%;
-            background: linear-gradient(to bottom, #700b3d, var(--roxo-menu));
-            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1001;
-            padding-top: 60px;
-            box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+            position: fixed; top: 0; left: -280px; width: 280px; height: 100%;
+            background: linear-gradient(to bottom, #240b36, #000);
+            transition: 0.3s; z-index: 1001; padding-top: 50px;
         }
 
         .menu-link {
-            padding: 15px 30px;
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
+            padding: 15px 25px; display: block; color: white;
+            text-decoration: none; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .menu-link:hover { background: rgba(255,255,255,0.1); }
+        .sub-menu { padding-left: 40px; background: rgba(0,0,0,0.2); display: none; }
+        .sub-menu a { padding: 10px; display: block; color: #bbb; text-decoration: none; font-size: 0.9rem; }
 
-        /* Destaque Principal */
-        .banner-destaque {
-            width: 100%;
-            height: 380px;
-            background: linear-gradient(to top, var(--roxo-fundo), transparent 70%), 
-                        url('https://telegra.ph/file/a8df15bd81d4a6455c7266866a3f4db92f84c7c0.jpg');
-            background-size: cover;
-            background-position: center 20%;
-            display: flex;
-            align-items: flex-end;
-            padding: 25px;
-            box-sizing: border-box;
+        /* Seção de Indicação */
+        .box-indicacao {
+            margin: 20px; padding: 15px;
+            background: #161616; border-radius: 10px; border: 1px solid var(--roxo-vibrante);
         }
 
-        .banner-info h2 { font-size: 2rem; margin: 0; text-shadow: 2px 2px 5px black; }
-
-        /* Grid de Obras */
-        .secao-titulo {
-            padding: 25px 20px 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--rosa-brilhante);
-            display: flex;
-            align-items: center;
+        textarea {
+            width: 100%; background: #000; border: 1px solid #333;
+            color: white; padding: 10px; border-radius: 5px; box-sizing: border-box;
         }
 
-        .grid-obras {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            padding: 0 15px;
-        }
-
-        .card-obra { background: var(--cinza-escuro); border-radius: 8px; overflow: hidden; border: 1px solid #222; }
-        .card-obra img { width: 100%; height: 260px; object-fit: cover; }
-        
-        .card-capitulos { padding: 10px; }
-        .cap-link {
-            background: #252525;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            justify-content: space-between;
-            padding: 8px;
-            margin-bottom: 6px;
-            border-radius: 4px;
-            font-size: 0.85rem;
+        .btn-enviar {
+            background: var(--roxo-vibrante); color: white; border: none;
+            width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; font-weight: bold;
         }
 
         /* Recrutamento */
-        .recrutamento {
-            margin: 30px 15px;
-            background: #1a0b2e;
-            border: 1px dashed var(--rosa-brilhante);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
+        .recrutamento-box {
+            margin: 20px; padding: 20px; text-align: center;
+            border: 2px dashed var(--roxo-claro); border-radius: 10px;
         }
-
-        /* Botão Copiar */
-        .btn-pix {
-            background: var(--rosa-brilhante);
-            border: none;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            width: 100%;
-            font-weight: bold;
-        }
-
     </style>
 </head>
 <body>
 
     <header>
-        <div onclick="abrirMenu()" style="font-size: 28px; cursor: pointer;">☰</div>
-        <div class="search-bar">
-            🔍 <input type="text" placeholder="Buscar mangá...">
-        </div>
-        <div id="btn-fav" style="font-size: 22px; cursor: pointer;">❤️</div>
+        <div onclick="toggleMenu()" style="font-size: 25px; cursor: pointer;">☰</div>
+        <div class="search-area">🔍 <input type="text" placeholder="Buscar..." style="background:none; border:none; color:white; outline:none; width:100%;"></div>
+        <a href="#favoritos" class="btn-fav-header">FAVORITOS ❤️</a>
     </header>
 
-    <div id="sideMenu" class="side-menu">
-        <div onclick="fecharMenu()" style="position:absolute; top:15px; right:25px; font-size:30px; cursor:pointer;">✕</div>
-        <a href="#" class="menu-link">OBRAS 🔖</a>
-        <a href="#" class="menu-link">CONCLUÍDOS 📖</a>
-        <a href="#" class="menu-link">INDICAR OBRA 💡</a>
+    <nav id="menu" class="side-menu">
+        <div onclick="toggleMenu()" style="position:absolute; top:15px; right:20px; font-size:25px;">✕</div>
         
-        <div style="padding: 25px; background: rgba(0,0,0,0.4); margin-top: 15px;">
-            <p style="color: #ffeb3b; font-size: 0.9rem; margin: 0 0 10px;">👑 PRIORIDADE (R$ 5,00)</p>
-            <p style="font-size: 0.75rem; color: #ddd;">Para tradução rápida, envie um PIX e mande o comprovante!</p>
-            <p style="font-size: 0.8rem; background: #000; padding: 10px; border-radius: 5px; word-break: break-all;">stephanysantos787@gmail.com</p>
-            <button class="btn-pix" onclick="copiarPix()">COPIAR PIX</button>
-        </div>
-    </div>
-
-    <div class="banner-destaque">
-        <div class="banner-info">
-            <h2>Imugi e o lenhador</h2>
-            <p style="color: #ffb2cc; margin: 5px 0;">Yaoi • Novo</p>
-            <button style="background:var(--rosa-brilhante); border:none; color:white; padding:12px 25px; border-radius:30px; font-weight:bold;">LER AGORA</button>
-        </div>
-    </div>
-
-    <div class="secao-titulo">✨ ÚLTIMAS ATUALIZAÇÕES</div>
-
-    <div class="grid-obras">
-        <div class="card-obra">
-            <img src="https://telegra.ph/file/a8df15bd81d4a6455c7266866a3f4db92f84c7c0.jpg" alt="Imugi">
-            <div class="card-capitulos">
-                <a href="#" class="cap-link"><span>Capítulo 01</span> <span style="color:var(--rosa-brilhante)">NEW</span></a>
-                <a href="#" class="cap-link" style="opacity: 0.5;"><span>Capítulo 00</span> <span style="font-size:0.7rem">Ontem</span></a>
-            </div>
+        <a href="javascript:void(0)" class="menu-link" onclick="toggleSub()">OBRAS 🔖</a>
+        <div id="sub-obras" class="sub-menu">
+            <a href="#">Todos</a>
+            <a href="#">Concluídos</a>
+            <a href="#">Em Andamento</a>
+            <a href="#">Populares (Mais Lidos)</a>
         </div>
 
-        <div class="card-obra">
-            <div style="height:260px; background:#222; display:flex; align-items:center; justify-content:center; color:#555;">EM BREVE</div>
-            <div class="card-capitulos">
-                <p style="font-size: 0.8rem; text-align: center; color: #777;">Aguardando novo projeto...</p>
-            </div>
+        <a href="#" class="menu-link">CONCLUÍDOS 📖</a>
+        <a href="#recrutamento" class="menu-link">RECRUTAMENTO ❤️</a>
+        
+        <div style="padding: 20px; font-size: 0.8rem;">
+            <p style="color: #ffeb3b;">PIX: stephanysantos787@gmail.com</p>
         </div>
-    </div>
+    </nav>
 
-    <div class="recrutamento">
-        <h3 style="color: var(--rosa-brilhante); margin-top: 0;">RECRUTAMENTO ❤️</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">Quer ajudar a Pandya Scan? Estamos precisando de:</p>
-        <p style="font-weight: bold; color: white;">TRADUTORES (ING/KOR) • CLEANERS • REVISORES</p>
-        <button style="background: none; border: 1px solid white; color: white; padding: 8px 15px; border-radius: 5px; margin-top: 10px;">Chamar no Twitter/DM</button>
-    </div>
+    <main>
+        <h2 style="padding: 20px; color: var(--roxo-claro);">Últimas Atualizações</h2>
+        <div id="lista-obras" style="padding: 0 20px;">
+             <p style="color: #666;">Carregando obras...</p>
+        </div>
+
+        <div class="box-indicacao">
+            <h3 style="color: var(--roxo-claro); margin-top: 0;">💡 Indicar Obra</h3>
+            <p style="font-size: 0.8rem; color: #aaa;">Diga o nome da obra que você quer ver aqui!</p>
+            <textarea id="txt-indicacao" rows="3" placeholder="Ex: Nome do Mangá - Autor"></textarea>
+            
+            <label style="font-size: 0.8rem; display: block; margin-top: 10px;">
+                <input type="checkbox" id="chk-prioridade"> Quero Prioridade (R$ 5,00)
+            </label>
+            
+            <button class="btn-enviar" onclick="enviarIndicacao()">ENVIAR INDICAÇÃO</button>
+        </div>
+
+        <div id="recrutamento" class="recrutamento-box">
+            <h3 style="color: var(--roxo-claro);">RECRUTAMENTO</h3>
+            <p>Precisamos de: <b>Tradutores (ING -> PT), Editores e Revisores.</b></p>
+            <p>Fale comigo no WhatsApp:</p>
+            <a href="https://wa.me/5599988058477" style="color: #25d366; font-weight: bold; text-decoration: none; font-size: 1.2rem;">(99) 98805-8477</a>
+        </div>
+    </main>
 
     <script>
-        function abrirMenu() { document.getElementById('sideMenu').style.left = '0'; }
-        function fecharMenu() { document.getElementById('sideMenu').style.left = '-280px'; }
-
-        function copiarPix() {
-            const pix = "stephanysantos787@gmail.com";
-            navigator.clipboard.writeText(pix);
-            alert("Chave PIX copiada! ❤️");
+        function toggleMenu() {
+            const m = document.getElementById('menu');
+            m.style.left = m.style.left === '0px' ? '-280px' : '0px';
         }
 
-        document.getElementById('btn-fav').onclick = function() {
-            alert("Favoritado! Esta obra aparecerá na sua lista de favoritos em breve.");
+        function toggleSub() {
+            const s = document.getElementById('sub-obras');
+            s.style.display = s.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function enviarIndicacao() {
+            const texto = document.getElementById('txt-indicacao').value;
+            const prioridade = document.getElementById('chk-prioridade').checked ? "COM PRIORIDADE" : "Sem prioridade";
+            const mensagem = encodeURIComponent(`Olá Pandya Scan! Quero indicar a obra: ${texto}. (${prioridade})`);
+            window.open(`https://wa.me/5599988058477?text=${mensagem}`);
         }
     </script>
-
 </body>
-</html>
+            </html>
+                
