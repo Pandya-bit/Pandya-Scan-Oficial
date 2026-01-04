@@ -2,7 +2,7 @@ const minhasObras = [
     {
         id: 1,
         titulo: "Imugi e o lenhador",
-        imagem: "https://telegra.ph/file/a8df15bd81d4a6455c7266866a3f4db92f84c7c0.jpg",
+        imagem: "https://i.postimg.cc/FzX8txZj/a8df15bd81d4a6455c7266866a3f4db92f84c7c0.jpg"
         status: "Em andamento",
         linkDetalhes: "detalhes.html" // Aqui ele vai para a sinopse!
     }
