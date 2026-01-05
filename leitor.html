@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor - Pandya Scan</title>
+    <style>
+        body {
+            background-color: #000; /* Preto total para focar na imagem */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #FDFD96; /* Amarelo Pastel */
+            position: sticky;
+            top: 0;
+        }
+
+        .btn-voltar {
+            color: #FDFD96;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .capitulo-container {
+            width: 100%;
+            max-width: 800px; /* Largura ideal para ler no PC e Celular */
+        }
+
+        .capitulo-container img {
+            width: 100%;
+            display: block; /* Remove espaços brancos entre as imagens */
+            margin: 0;
+        }
+
+        footer {
+            padding: 40px;
+            color: #FDFD96;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="javascript:history.back()" class="btn-voltar">⬅ Voltar para a Obra</a>
+</header>
+
+<div class="capitulo-container">
+    <img src="https://link-da-sua-imagem-01.jpg">
+    <img src="https://link-da-sua-imagem-02.jpg">
+    <img src="https://link-da-sua-imagem-03.jpg">
+    </div>
+
+<footer>
+    <p>Você chegou ao fim deste capítulo!</p>
+    <a href="javascript:history.back()" class="btn-voltar">Voltar para a lista de capítulos</a>
+</footer>
+
+</body>
+</html>
